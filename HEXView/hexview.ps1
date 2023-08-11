@@ -3,36 +3,36 @@
 		HEX-View Command Line.
 
     .DESCRIPTION
-		The HEX-View Command Line is a utility that assists in viewing small files displayed in hex format..
-		
+	The HEX-View Command Line is a utility that assists in viewing small files displayed in hex format..
+
     .COMPILE_DATE
-		Date: 12.08.2023
+	Date: 12.08.2023
 
     .EXAMPLE
-		To view a file in HEX
-		PS> .\hexview.ps1 -filePath "<FilePath\FileName>"
+	To view a file in HEX
+	PS> .\hexview.ps1 -filePath "<FilePath\FileName>"
 
     .EXAMPLE
-		To view a text string in HEX
-		PS> .\hexview.ps1 -Text "Hello, World!"
+	To view a text string in HEX
+	PS> .\hexview.ps1 -Text "Hello, World!"
 
     .EXAMPLE
-		To view a file in HEX and produce a report.
-		PS> .\hexview.ps1 -filePath "<FilePath\FileName>" -Report
+	To view a file in HEX and produce a report.
+	PS> .\hexview.ps1 -filePath "<FilePath\FileName>" -Report
 
     .LINK
 		https://github.com/decryptbg/PowerShell/tree/main/HEXView
-	
+
     .VERSION
-		1.2 - 12.08.2023
-			- Added produce a report
+	1.2 - 12.08.2023
+		- Added produce a report
+
+	1.1 - 11.08.2023
+		- Added view a text string in HEX
 		
-		1.1 - 11.08.2023
-			- Added view a text string in HEX
-		
-		1.0 - 11.08.2023
-			- Begin
-			- View a file in HEX
+	1.0 - 11.08.2023
+		- Begin
+		- View a file in HEX
 #>
 
 param(
