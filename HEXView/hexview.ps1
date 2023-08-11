@@ -5,7 +5,7 @@
     .DESCRIPTION
 		The HEX-View Command Line is a utility that assists in viewing small files displayed in hex format..
 		
-	.COMPILE_DATE
+    .COMPILE_DATE
 		Date: 12.08.2023
 
     .EXAMPLE
@@ -23,7 +23,7 @@
     .LINK
 		https://github.com/decryptbg/PowerShell/tree/main/HEXView
 	
-	.VERSION
+    .VERSION
 		1.2 - 12.08.2023
 			- Added produce a report
 		
