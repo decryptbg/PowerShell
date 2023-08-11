@@ -75,7 +75,7 @@ if ($FilePath) {
     $hexFormatted = $fileBytes | Format-Hex
     $hexFormatted
     # DisplayHexChunk $fileBytes $offset $chunkSize
-	
+
 }
 elseif ($Text) {
 	Write-Host " Input String: $Text" -ForegroundColor Yellow
