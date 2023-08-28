@@ -13,7 +13,7 @@
 	PS> .\MikroTikWinBox_Extractor.ps1
 
 .LINK
-	https://github.com/decryptbg/PowerShell/
+	https://github.com/decryptbg/PowerShell/blob/main/MikroTikWinBox_Extractor/MikroTikWinBox_Extractor.ps1
 
 .VERSION
 	2.0 - 28.08.2023
