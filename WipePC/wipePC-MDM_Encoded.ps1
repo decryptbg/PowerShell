@@ -1,0 +1,15 @@
+<# 
+ 
+ WipePC MDM Encode
+ 
+#>
+
+$base64 = 'JG5hbWVzcGFjZU5hbWUgPSAicm9vdFxjaW12MlxtZG1cZG1tYXAiDQokY2xhc3NOYW1lID0gIk1ETV9SZW1vdGVXaXBlIg0KJG1ldGhvZE5hbWUgPSAiZG9XaXBlUHJvdGVjdGVkTWV0aG9kIg0KDQokc2Vzc2lvbiA9IE5ldy1DaW1TZXNzaW9uDQoNCiRwYXJhbXMgPSBOZXctT2JqZWN0IE1pY3Jvc29mdC5NYW5hZ2VtZW50LkluZnJhc3RydWN0dXJlLkNpbU1ldGhvZFBhcmFtZXRlcnNDb2xsZWN0aW9uDQokcGFyYW0gPSBbTWljcm9zb2Z0Lk1hbmFnZW1lbnQuSW5mcmFzdHJ1Y3R1cmUuQ2ltTWV0aG9kUGFyYW1ldGVyXTo6Q3JlYXRlKCJwYXJhbSIsICIiLCAiU3RyaW5nIiwgIkluIikNCiRwYXJhbXMuQWRkKCRwYXJhbSkNCg0KdHJ5DQp7DQogICAgJGluc3RhbmNlID0gR2V0LUNpbUluc3RhbmNlIC1OYW1lc3BhY2UgJG5hbWVzcGFjZU5hbWUgLUNsYXNzTmFtZSAkY2xhc3NOYW1lIC1GaWx0ZXIgIlBhcmVudElEPScuL1ZlbmRvci9NU0ZUJyBhbmQgSW5zdGFuY2VJRD0nUmVtb3RlV2lwZSciDQogICAgJHNlc3Npb24uSW52b2tlTWV0aG9kKCRuYW1lc3BhY2VOYW1lLCAkaW5zdGFuY2UsICRtZXRob2ROYW1lLCAkcGFyYW1zKQ0KfQ0KY2F0Y2ggW0V4Y2VwdGlvbl0NCnsNCiAgICB3cml0ZS1ob3N0ICRfIHwgb3V0LXN0cmluZw0KfQ=='
+$bytes = [System.Convert]::FromBase64String($base64)
+$taskScript = [System.Text.Encoding]::UTF8.GetString($bytes)
+$taskScript | Out-File -FilePath 'C:\Windows\Temp\wipe.ps1'
+$taskName = 'Start Remote Wipe'
+$action = New-ScheduledTaskAction -Execute 'Powershell.exe' -Argument '-WindowStyle Hidden -ExecutionPolicy Bypass -File "C:\Windows\Temp\wipe.ps1"'
+$principal = New-ScheduledTaskPrincipal -UserId 'SYSTEM' -LogonType ServiceAccount
+Register-ScheduledTask -Action $action -TaskName $taskName -Principal $principal
+Start-ScheduledTask -TaskName $taskName
