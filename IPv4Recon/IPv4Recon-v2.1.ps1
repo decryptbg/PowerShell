@@ -8,7 +8,7 @@
     Includes parallel scanning, input validation, progress indicators, and export options.
 
 .AUTHOR
-    Ivo Lyubenov
+    decrypt
 
 .COMPILE_DATE
     Date: 13.06.2025
